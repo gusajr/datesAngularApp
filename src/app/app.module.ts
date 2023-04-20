@@ -11,11 +11,20 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MAT_DATE_LOCALE} from '@angular/material/core';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import {Component} from '@angular/core';
+
+import {MaterialExampleModule} from '../environments/material.module';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatePickerComponent,
+    DatePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -28,8 +37,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatRippleModule,
     MatButtonModule,
     MatToolbarModule,
+    NgxMaterialTimepickerModule,
+    MatFormFieldModule,
+    FormsModule,
+    MaterialExampleModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

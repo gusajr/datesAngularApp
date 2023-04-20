@@ -331,13 +331,25 @@
 
   <!-- Resources -->
   <h2>Horarios disponibles</h2>
-  <p>Selecciona la fecha y hora disponibles en las que requieres la cita:</p>
+  <p>Selecciona la fecha en la que requieres la cita:</p>
 
-  <br>
+  <mat-form-field style="margin-top:10px;margin-bottom:10px;" class="example-full-width" appearance="fill">
+    <mat-label>Escoge la fecha </mat-label>
+    <input matInput [matDatepicker]="picker2">
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker touchUi #picker2></mat-datepicker>
+  </mat-form-field>
+  
 
-  <mat-card class="demo-inline-calendar-card">
-    <mat-calendar [(selected)]="selected"></mat-calendar>
-  </mat-card>
+  <p>Ahora selecciona la hora: </p>
+
+  <input style="margin-top:10px;margin-bottom:10px;" [ngxTimepicker]="picker">
+  <ngx-material-timepicker #picker [disableAnimation]="disabled" [minutesGap]="minutesGap" [defaultTime]="defaultTime"></ngx-material-timepicker>
+
+  <!--mat-form-field>
+    <input matInput type="datetime-local" placeholder="start date">
+  </mat-form-field-->
 
   <br>
 
